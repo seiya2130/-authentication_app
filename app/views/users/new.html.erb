@@ -1,2 +1,14 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>新規登録</h1>
+<%= render 'shared/error_messages' %>
+<%= form_for(@user, url: signup_path) do |f| %>
+    <%= f.label :名前 %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :メールアドレス %>
+    <%= f.email_field :email %>
+    <br>
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "アカウント登録" %>
+<% end %>
